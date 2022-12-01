@@ -38,11 +38,10 @@ void MyDetectorConstruction::DefineMaterials()
     worldMat = nist->FindOrBuildMaterial("G4_AIR");
     H2O = new G4Material("H2O", 1.000*g/cm3, 2);
 
-    SiO2->AddElement(nist->FindOrBuildElement("Si"), 1);
-    SiO2->AddElement(nist->FindOrBuildElement("O"), 2);
-
-    H2O->AddElement(nist->FindOrBuildElement("H"), 2);
-    H2O->AddElement(nist->FindOrBuildElement("O"), 1);
+   Lead->AddElement(nist->FindOrBuildElement("PB"), 1);     //add Lead  layer
+   Copper->AddElement(nist->FindOrBuildElement("CU"), 2);   //add copper layer
+   Aluminium->AddElement(nist->FindOrBuildElement("al"), 2);//add aluminium layer
+  
 
     Aerogel->AddMaterial(SiO2, 62.5*perCent);
     Aerogel->AddMaterial(H2O, 37.4*perCent);
